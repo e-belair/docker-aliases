@@ -4,7 +4,7 @@ Usefull aliases for docker & docker-compose inspired by [jgrodziski/docker-alias
 
 ## Installation
 ```
-git clone e-belair/docker-aliases.git ~/.docker-aliases
+git clone https://github.com/e-belair/docker-aliases.git ~/.docker-aliases
 
 # Add to ~/.bashrc
 source ~/.docker-aliases/docker-aliases.sh
