@@ -9,3 +9,8 @@ git clone e-belair/docker-aliases.git ~/.docker-aliases
 # Add to ~/.bashrc
 source ~/.docker-aliases/docker-aliases.sh
 ```
+
+### Usage
+```
+dchelp
+```
