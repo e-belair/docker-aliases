@@ -24,7 +24,7 @@ function dip-fn {
 }
 
 function dex-fn {
-	docker exec -it $1 /bin/bash
+	docker exec -it $1 /bin/sh
 }
 
 function di-fn {
@@ -36,7 +36,7 @@ function dl-fn {
 }
 
 function drun-fn {
-	docker run -it $1 /bin/bash
+	docker run -it $1 /bin/sh
 }
 
 function dsr-fn {
