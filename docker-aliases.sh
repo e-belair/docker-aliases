@@ -47,12 +47,40 @@ function dsa-fn {
 	docker stop $(docker ps -a -q)
 }
 
-export DC_ALIAS_DIR="$(dirname $(readlink -f $0))"
+function dchelp {
+    cat << EOF
+############################################################################
+#                                                                          #
+#               ------- Useful Docker Aliases --------                     #
+#                                                                          #
+#     # Usage:                                                             #
+#     dc             : docker-compose                                      #
+#     dchelp         : show this help                                      #
+#     dcu            : docker-compose up -d                                #
+#     dcd            : docker-compose down                                 #
+#     dex <container>: execute a bash shell inside the RUNNING <container> #
+#     di <container> : docker inspect <container>                          #
+#     dim            : docker images                                       #
+#     dip            : IP addresses of all running containers              #
+#     dl <container> : docker logs -f <container>                          #
+#     dnames         : names of all running containers                     #
+#     dps            : docker ps                                           #
+#     dpsa           : docker ps -a                                        #
+#     drmc           : remove all exited containers                        #
+#     drmid          : remove all dangling images                          #
+#     drun <image>   : execute a bash shell in NEW container from <image>  #
+#     dsa            : stop all containers                                 #
+#     dsr <container>: stop then remove <container>                        #
+#                                                                          #
+############################################################################
 
-alias dc="docker-compose"
-alias dchelp="cat $DC_ALIAS_DIR/docker-aliases-help.txt"
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
+EOF
+}
+
+alias dc="docker compose"
+alias dchelp="dchelp"
+alias dcu="dc up -d"
+alias dcd="dc down"
 alias dex=dex-fn
 alias di=di-fn
 alias dim="docker images"
