@@ -65,6 +65,7 @@ function dchelp {
 #     dl <container> : docker logs -f <container>                          #
 #     dnames         : names of all running containers                     #
 #     dps            : docker ps                                           #
+#     dpsf           : docker ps containers names only                     #
 #     dpsa           : docker ps -a                                        #
 #     drmc           : remove all exited containers                        #
 #     drmid          : remove all dangling images                          #
@@ -88,6 +89,7 @@ alias dip=dip-fn
 alias dl=dl-fn
 alias dnames=dnames-fn
 alias dps="docker ps"
+alias dpsf="docker ps --format '{{.Names}}'"
 alias dpsa="docker ps -a"
 alias drmc="docker rm $(docker ps --all -q -f status=exited)"
 alias drmid="docker rmi $( docker images -q -f dangling=true)"
